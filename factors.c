@@ -12,7 +12,7 @@
  *
  **/
 
-int toFindP(long long int num)
+int toFindP(long int num)
 {
 	int i = 2;
 
@@ -57,13 +57,14 @@ int toFindQ(long int num)
 
 int main(int argc, char *argv[])
 {
-	(void)argc;
-	char *line = NULL;
-	size_t len = 0;
+
+	int p, q;
 	ssize_t nread;
 	FILE *fptr;
+	char *line;
+
 	long int n;
-	int p, q;
+	size_t len = 0;
 
 	fptr = fopen(argv[1], "r");
 	if (fptr == NULL)
@@ -71,6 +72,8 @@ int main(int argc, char *argv[])
 		fprintf(stdout, " Unable to Open File\n");
 		exit(EXIT_FAILURE);
 	}
+
+	line = NULL;
 
 	while ((nread = getline(&line, &len, fptr)) != -1)
 	{
