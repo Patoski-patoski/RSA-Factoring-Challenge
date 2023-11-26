@@ -84,7 +84,7 @@ int main(int argc, char *argv[])
 			p = toFindP(n);
 			q = toFindQ(n);
 
-			fprintf(stdout, "%ld = %d * %d\n", n, q, p);
+			fprintf(stdout, "%ld=%d*%d\n", n, q, p);
 			token = strtok(NULL, delim);
 		}
 	}
