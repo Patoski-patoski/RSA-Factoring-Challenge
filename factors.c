@@ -38,11 +38,9 @@ int toFindP(long int num)
  *
  **/
 
-int toFindQ(long int num)
+int toFindQ(long int num, int p)
 {
-	int p = toFindP(num);
 	int q = num / p;
-
 	return (q);
 }
 
@@ -57,7 +55,6 @@ int toFindQ(long int num)
 
 int main(int argc, char *argv[])
 {
-
 	int p, q;
 	ssize_t nread;
 	FILE *fptr;
@@ -85,15 +82,20 @@ int main(int argc, char *argv[])
 		{
 			n = atoll(token);
 			p = toFindP(n);
-			q = toFindQ(n);
+			q = toFindQ(n, p);
 
 			fprintf(stdout, "%ld=%d*%d\n", n, q, p);
 			token = strtok(NULL, delim);
 		}
 	}
+	if (nread == -1)
+	{
+		free(line);
+		exit(EXIT_FAILURE);
+	}
 
 	puts("");
-	fclose(fptr);
 	free(line);
+	fclose(fptr);
 	return (0);
 }
