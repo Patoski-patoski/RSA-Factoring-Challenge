@@ -1,2 +1,1 @@
-# RSA-Factoring-Challenge
-Algorithm and Scripting
+RSA Factoring Challenge
