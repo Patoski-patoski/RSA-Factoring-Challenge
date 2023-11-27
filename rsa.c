@@ -13,10 +13,10 @@
 
 long int gcd(long int a, long int b)
 {
-	long int temp;
-
 	while (b != 0)
 	{
+		long int temp;
+
 		temp = b;
 		b = a % b;
 		a = temp;
@@ -47,7 +47,6 @@ long int pollardsRhoFormula(long int n)
 
 		d = gcd(abs(x - y), n);
 	}
-
 	return (d);
 }
 
